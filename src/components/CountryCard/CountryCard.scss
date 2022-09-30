@@ -1,0 +1,40 @@
+@use '../../styles/abstracts/' as *;
+
+.country {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+  max-width: rem(264);
+  border-radius: rem(5);
+  overflow: hidden;
+
+  &__description {
+    padding: rem(20);
+
+    & > * {
+      padding-bottom: rem(10);
+      
+    }
+  }
+  
+  &__name {
+    font-size: rem(18);
+    line-height: rem(26);
+    font-weight: 800;
+  }
+
+  &__info, strong{
+    font-size: rem(14);
+    line-height: rem(16);
+    font-weight: 600;
+  }
+
+  &__flag img {
+    width: 100%;
+  }
+  strong {
+    font-weight: normal;
+  }
+
+
+
+ 
+}

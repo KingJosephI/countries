@@ -1,17 +1,28 @@
 import Proptypes from 'prop-types';
+import myFlag from './drc.png';
+import './CountryCard.scss';
 
 const CountryCard = ({ country, flag, population, region, capital }) => {
   return (
     <div className="country">
       <div className="country__flag">
-        <img src={flag} alt="Flag" />
+        {/* <img src={flag} alt="Country flag" /> */}
+        <img src={myFlag} alt="Country flag" />
       </div>
       <div className="country__description">
         <h1 className="country__name">{country}</h1>
-        <strong className="country__info">Population</strong>: {population}
-        <br />
-        <strong className="country__info">Region</strong>: {region} <br />
-        <strong className="country__info">Capital</strong>: {capital} <br />
+        <div>
+          <span className="country__info">Population: </span>
+          <strong>{population}</strong>
+        </div>
+        <div>
+          <span className="country__info">Region: </span>
+          <strong>{region}</strong>
+        </div>
+        <div>
+          <span className="country__info">Capital: </span>
+          <strong>{capital}</strong>
+        </div>
       </div>
     </div>
   );
@@ -25,6 +36,7 @@ CountryCard.propTypes = {
 };
 
 CountryCard.defaultProps = {
+  flag: require('./drc.png').default,
   country: 'Congo DR',
   population: 80000000,
   region: 'Africa',
