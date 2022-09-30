@@ -1,4 +1,5 @@
 import './App.scss';
+import CountryCard from './components/CountryCard/CountryCard';
 import Header from './components/Header/Header';
 import SearchBar from './components/SearchBar/SearchBar';
 
@@ -9,6 +10,7 @@ function App() {
       <div className="search-zone">
         <SearchBar />
       </div>
+      <CountryCard />
     </div>
   );
 }
