@@ -5,4 +5,24 @@
   justify-content: space-between;
   padding: rem(30) rem(81);
   box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+
+  &__title{
+    font-size: rem(24);
+    font-weight: 800;
+  }
+
+  &__darkmode-container {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    
+    &:hover {
+      cursor: pointer;
+    }
+
+    span {
+      font-size: rem(16);
+      font-weight: 600;
+    }
+  }
 }
