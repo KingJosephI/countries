@@ -1,20 +1,14 @@
-import { CountryProvider } from './contexts/CountryContext';
-import CountryList from './components/CountryList/CountryList';
-import Header from './components/Header/Header';
-import SearchBar from './components/SearchBar/SearchBar';
+import { Route, Routes } from 'react-router-dom';
+import CountryDetails from './components/CountryDetails/CountryDetails';
+import Home from './pages/Home/Home';
 import './App.scss';
 
 function App() {
   return (
-    <CountryProvider>
-      <div className="App">
-        <Header />
-        <div className="search-zone">
-          <SearchBar />
-        </div>
-        <CountryList />
-      </div>
-    </CountryProvider>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/:country" element={<CountryDetails />} />
+    </Routes>
   );
 }
 
