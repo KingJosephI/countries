@@ -7,7 +7,7 @@ const CountryCard = ({ country, flag, population, region, capital }) => {
     <div className="country">
       <div className="country__flag">
         {/* <img src={flag} alt="Country flag" /> */}
-        <img src={myFlag} alt="Country flag" />
+        <img src={flag} alt="Country flag" />
       </div>
       <div className="country__description">
         <h1 className="country__name">{country}</h1>
@@ -36,7 +36,7 @@ CountryCard.propTypes = {
 };
 
 CountryCard.defaultProps = {
-  flag: require('./drc.png').default,
+  flag: myFlag,
   country: 'Congo DR',
   population: 80000000,
   region: 'Africa',
