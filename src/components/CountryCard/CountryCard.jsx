@@ -6,7 +6,6 @@ const CountryCard = ({ country, flag, population, region, capital }) => {
   return (
     <div className="country">
       <div className="country__flag">
-        {/* <img src={flag} alt="Country flag" /> */}
         <img src={flag} alt="Country flag" />
       </div>
       <div className="country__description">
