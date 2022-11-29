@@ -5,19 +5,19 @@ const Country = ({ country = {} }) => {
   const { name, population, region, capital, flags } = country;
   return (
     <div className="country">
-      <div>
+      <div className="country__illustration">
         <img src={flags.png} alt={`${name} flag`} />
       </div>
-      <div>
+      <div className="country__content">
         <h2 className="country__name">{name.common}</h2>
-        <div>
-          <span className="country__info">Population</span>: {population}
+        <div className="country__info-type">
+          <span>Population</span>: {population}
         </div>
-        <div>
-          <span className="country__info">Region</span>: {region}
+        <div className="country__info-type">
+          <span>Region</span>: {region}
         </div>
-        <div>
-          <span className="country__info">Capital</span>: {capital}
+        <div className="country__info-type">
+          <span>Capital</span>: {capital}
         </div>
       </div>
     </div>

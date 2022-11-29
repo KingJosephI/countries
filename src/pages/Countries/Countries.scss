@@ -11,12 +11,15 @@
 
   &__list {
     margin-top: rem(40);
+    display: grid;
+    gap: rem(30);
+    justify-items: center;
   }
 }
 
 @media screen and (min-width: rem(700)) {
   .countries {
-    padding: rem(78) rem(48);
+    padding: rem(48) rem(81);
 
     &__filter-section {
       flex-direction: row;

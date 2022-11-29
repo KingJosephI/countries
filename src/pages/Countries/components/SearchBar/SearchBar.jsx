@@ -1,5 +1,5 @@
 import { BiSearchAlt2 } from 'react-icons/bi';
-import './Search.scss';
+import './SearchBar.scss';
 
 const SearchBar = ({ ...props }) => {
   return (
@@ -7,7 +7,7 @@ const SearchBar = ({ ...props }) => {
       <BiSearchAlt2 className="search__icon" />
       <input
         className="search__input"
-        type="search"
+        type="text"
         placeholder="Search for a country..."
         {...props}
       />

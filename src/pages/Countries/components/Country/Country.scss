@@ -1,1 +1,51 @@
 @use '../../../../styles/functions' as *;
+
+.country {
+  background-color: #fff;
+  border-radius: rem(5);
+  overflow: hidden;
+  transition: 0.2s;
+  // min-width: fit-content;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  &__name {
+    font-size: rem(18);
+    line-height: rem(26);
+    font-weight: 800;
+    margin-bottom: rem(16);
+  }
+
+  &__info-type {
+    font-size: rem(14);
+    line-height: rem(16);
+    font-weight: lighter;
+    padding-block-end: rem(10);
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+    padding: rem(46) rem(24);
+  }
+}
+
+@media screen and (min-width: rem(700)) {
+  .country {
+    width: 100%;
+    &__illustration {
+      height: rem(180);
+      // background-color: green;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

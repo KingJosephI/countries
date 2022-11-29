@@ -11,7 +11,7 @@
   &__title {
     font-size: rem(14);
     line-height: rem(20);
-    font-weight: 900;
+    font-weight: 800;
   }
 
   &__dark-mode {
@@ -30,7 +30,7 @@
 
 @media screen and (min-width: rem(700)) {
   .header {
-    padding-inline: rem(79);
+    padding-inline: rem(81);
 
     &__title {
       font-size: rem(24);
