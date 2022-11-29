@@ -4,11 +4,20 @@
 .select {
   width: rem(200);
   padding-block: rem(15);
+  padding-inline: rem(20);
   box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
   border-radius: rem(5);
   outline: none;
   border: none;
+  // appearance: none;
+  // background-color: white;
 
-  background-color: white;
-  padding-inline: rem(10);
+  // &__continent {
+  //   color: #111517;
+  //   color: red;
+  // }
+
+  // &::selection {
+  //   color: red;
+  // }
 }

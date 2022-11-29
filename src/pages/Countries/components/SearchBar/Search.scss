@@ -2,6 +2,8 @@
 
 .search {
   position: relative;
+  border-radius: rem(5);
+  overflow: hidden;
 
   &__icon {
     position: absolute;

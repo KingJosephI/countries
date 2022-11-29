@@ -1,12 +1,12 @@
 import { HiOutlineMoon } from 'react-icons/hi';
 
-const SwitchMode = ({ ...props }) => {
+const DarkmodeToggle = ({ ...props }) => {
   return (
-    <div className="header__dark-mode" {...props}>
+    <div {...props}>
       <HiOutlineMoon />
       Dark mode
     </div>
   );
 };
 
-export default SwitchMode;
+export default DarkmodeToggle;

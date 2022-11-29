@@ -1,0 +1,34 @@
+@use '../../styles/functions' as *;
+
+.countries {
+  padding: rem(16) rem(24);
+
+  &__filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__list {
+    margin-top: rem(40);
+  }
+}
+
+@media screen and (min-width: rem(700)) {
+  .countries {
+    padding: rem(78) rem(48);
+
+    &__filter-section {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: rem(20);
+
+      margin-top: rem(48);
+    }
+  }
+}
