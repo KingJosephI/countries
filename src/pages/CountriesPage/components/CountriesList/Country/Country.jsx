@@ -9,7 +9,9 @@ const Country = ({ country = {} }) => {
   return (
     <div
       className="country"
-      onClick={() => navigate(`/${name.common.toLowerCase()}`)}
+      onClick={() =>
+        navigate(`/${name.common.toLowerCase()}`, { state: name.common })
+      }
     >
       <div className="country__illustration">
         <img src={flags?.png} alt={`${name} flag`} />

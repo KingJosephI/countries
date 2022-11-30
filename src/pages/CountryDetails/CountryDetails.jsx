@@ -8,21 +8,6 @@ import './CountryDetails.scss';
 const CountryDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  // const {
-  //   state: {
-  //     flags,
-  //     name,
-  //     population,
-  //     region,
-  //     subregion,
-  //     capital,
-  //     tld,
-  //     borders,
-  //     languages,
-  //     currencies,
-  //   },
-
-  // } = useLocation();
 
   const [country, setCountry] = useState({});
 
@@ -33,9 +18,6 @@ const CountryDetails = () => {
       );
       const countryData = await result.data[0];
       setCountry(countryData);
-      console.log(countryData);
-      console.log(countryData.tld);
-      console.log(typeof countryData.tld);
     };
 
     getCountryDetails();

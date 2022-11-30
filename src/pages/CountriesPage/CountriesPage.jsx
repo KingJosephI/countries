@@ -41,10 +41,6 @@ const Countries = () => {
         ) : (
           <CountriesList countries={countries} />
         )}
-
-        <CountriesList countries={countries} />
-
-        {/* <CountriesList countries={countries} /> */}
       </main>
     </Layout>
   );
