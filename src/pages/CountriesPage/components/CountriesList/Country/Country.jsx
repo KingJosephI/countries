@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import './Country.scss';
 
 const Country = ({ country = {} }) => {
@@ -9,17 +9,15 @@ const Country = ({ country = {} }) => {
   return (
     <div
       className="country"
-      onClick={() =>
-        navigate(`/${name.common.toLowerCase()}`, { state: country })
-      }
+      onClick={() => navigate(`/${name.common.toLowerCase()}`)}
     >
       <div className="country__illustration">
-        <img src={flags.png} alt={`${name} flag`} />
+        <img src={flags?.png} alt={`${name} flag`} />
       </div>
       <div className="country__content">
         <h2 className="country__name">{name.common}</h2>
         <div className="country__info-type">
-          <span>Population</span>: {population}
+          <span>Population</span>: {population?.toLocaleString('en-US')}
         </div>
         <div className="country__info-type">
           <span>Region</span>: {region}

@@ -6,6 +6,7 @@ import './CountriesPage.scss';
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
+  const [isLoading, setIsloading] = useState(true);
 
   useEffect(() => {
     const getCountries = async () => {
@@ -13,6 +14,7 @@ const Countries = () => {
       const data = await result.data;
 
       setCountries(data);
+      setIsloading(false);
     };
 
     getCountries();
@@ -25,6 +27,20 @@ const Countries = () => {
           <SearchBar />
           <SelectContinent />
         </section>
+
+        {isLoading ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Loading...
+          </div>
+        ) : (
+          <CountriesList countries={countries} />
+        )}
 
         <CountriesList countries={countries} />
 
