@@ -1,10 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Country.scss';
 
 const Country = ({ country = {} }) => {
   const { name, population, region, capital, flags } = country;
+  const navigate = useNavigate();
+
   return (
-    <div className="country">
+    <div
+      className="country"
+      onClick={() =>
+        navigate(`/${name.common.toLowerCase()}`, { state: country })
+      }
+    >
       <div className="country__illustration">
         <img src={flags.png} alt={`${name} flag`} />
       </div>

@@ -1,4 +1,4 @@
-import DarkModeToggle from './components/DarkmodeToggle/DarkModeToggle';
+import DarkModeToggle from './DarkModeToggle';
 import './Header.scss';
 
 const Header = () => {

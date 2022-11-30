@@ -1,0 +1,94 @@
+@use '../../styles/functions' as *;
+
+.country-details {
+  padding: rem(40) rem(28);
+  // background-color: magenta;
+  &__flag {
+    margin-top: rem(64);
+
+    img {
+      border-radius: rem(5);
+    }
+  }
+  &__content {
+    display: grid;
+    gap: rem(20);
+    margin-top: rem(40);
+  }
+  &__arrow {
+    background-color: #fff;
+    display: inline-block;
+    font-size: rem(14);
+    line-height: rem(20);
+    width: rem(104);
+    height: rem(32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(10);
+    box-shadow: rgba(149, 157, 165, 0.1) rem(0) rem(8) rem(24);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: rem(2);
+
+    cursor: pointer;
+    // padding: rem(10) rem(20);
+  }
+
+  &__name {
+    font-size: rem(22);
+    font-weight: 800;
+  }
+
+  &__content {
+    display: grid;
+    gap: rem(20);
+    margin-top: rem(40);
+  }
+
+  &__info {
+    font-size: rem(14);
+    line-height: rem(32);
+    font-weight: 200;
+    // background-color: green;
+
+    span {
+      font-weight: 600;
+    }
+
+    &.border-country {
+      font-size: rem(16);
+      line-height: rem(24);
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__language {
+    font-weight: 200 !important;
+
+    &:not(:last-of-type)::after {
+      content: ', ';
+    }
+  }
+
+  &__border {
+    display: inline-block;
+    background-color: #fff;
+    padding: rem(10) rem(20);
+    box-shadow: rgba(149, 157, 165, 0.1) rem(0) rem(8) rem(24);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: 200;
+    font-size: rem(12);
+    border-radius: rem(2);
+
+    &:not(:last-of-type) {
+      margin-right: rem(10);
+      margin-bottom: rem(10);
+    }
+  }
+}
+
+@media screen and (min-width: rem(700)) {
+  .country-details {
+    padding: rem(80) rem(81);
+  }
+}

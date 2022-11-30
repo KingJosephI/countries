@@ -1,11 +1,12 @@
-@use '../../styles/functions' as *;
+@use '../../../styles/functions' as *;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: rem(16);
   min-height: rem(80);
-  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.1) rem(0) rem(8) rem(24);
   background-color: #fff;
 
   &__title {
