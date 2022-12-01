@@ -1,11 +1,13 @@
 import Country from './Country/Country';
 
-const CountriesList = ({ countries }) => {
+const CountriesList = ({ countries, isLoading }) => {
   return (
     <section className="countries__list">
-      {countries.map((country, id) => (
-        <Country key={id} country={country} />
-      ))}
+      {isLoading
+        ? 'Loading...'
+        : countries.map((country, id) => (
+            <Country key={id} country={country} />
+          ))}
     </section>
   );
 };
