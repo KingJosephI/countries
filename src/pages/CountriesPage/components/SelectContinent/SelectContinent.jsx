@@ -1,8 +1,20 @@
+import { useContext } from 'react';
+import { DarkModeContext } from '../../../../context/DarkModeConhtext';
 import './SelectContinent.scss';
 
 const SelectContinent = ({ ...props }) => {
+  const [isDarkMode] = useContext(DarkModeContext);
   return (
-    <select className="select" name="continents" id="continents" {...props}>
+    <select
+      style={{
+        background: isDarkMode ? '#2B3844' : '#fff',
+        color: isDarkMode ? '#fff' : '#2B3844',
+      }}
+      className="select"
+      name="continents"
+      id="continents"
+      {...props}
+    >
       <option className="select__continent" value="" disabled>
         Filter by Region
       </option>

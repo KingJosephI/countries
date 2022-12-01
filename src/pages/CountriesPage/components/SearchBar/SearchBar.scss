@@ -1,7 +1,6 @@
 @use '../../../../styles/functions' as *;
 
 @mixin searchBarStyles() {
-  // .search {
   position: relative;
   border-radius: rem(5);
   overflow: hidden;
@@ -24,7 +23,6 @@
     font-size: rem(16);
     position: relative;
     padding-left: rem(50);
-    // position: relative;
 
     &::placeholder {
       font-family: 'Nunito Sans', sans-serif;
@@ -33,89 +31,22 @@
       position: relative;
     }
   }
-  // }
 
   @media screen and (min-width: rem(700)) {
-    // .search {
     &__input {
       width: rem(480);
       border-radius: rem(5);
     }
-    // }
   }
 }
 .search {
   @include searchBarStyles();
-  // &__icon {
-  //   position: absolute;
-  //   top: rem(15);
-  //   left: rem(15);
-  //   font-size: rem(25);
-  //   color: #848484;
-  //   z-index: 9999;
-  // }
-  // position: relative;
-  // border-radius: rem(5);
-  // overflow: hidden;
-
-  // &__icon {
-  //   position: absolute;
-  //   top: rem(15);
-  //   left: rem(15);
-  //   font-size: rem(25);
-  //   color: #848484;
-  //   z-index: 9999;
-  // }
-
-  // &__input {
-  //   width: 100%;
-  //   outline: none;
-  //   border-color: transparent;
-  //   padding-block: rem(15);
-  //   box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
-  //   font-size: rem(16);
-  //   position: relative;
-  //   padding-left: rem(50);
-  //   // position: relative;
-
-  //   &::placeholder {
-  //     font-family: 'Nunito Sans', sans-serif;
-  //     font-size: rem(14);
-  //     line-height: rem(20);
-  //     position: relative;
-  //   }
-  // }
 }
-
-// @media screen and (min-width: rem(700)) {
-//   .search {
-//     &__input {
-//       width: rem(480);
-//       border-radius: rem(5);
-//     }
-//   }
-// }
 
 .search-dark {
   @include searchBarStyles();
-  &__input {
-    background-color: #000;
-    // background-color: #fff;
-    // width: 100%;
-    // outline: none;
-    // border-color: transparent;
-    // padding-block: rem(15);
-    // box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
-    // font-size: rem(16);
-    // position: relative;
-    // padding-left: rem(50);
-    // position: relative;
+  background: #000;
 
-    // &::placeholder {
-    //   font-family: 'Nunito Sans', sans-serif;
-    //   font-size: rem(14);
-    //   line-height: rem(20);
-    //   position: relative;
-    // }
+  &__input {
   }
 }
