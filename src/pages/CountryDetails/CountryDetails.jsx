@@ -1,32 +1,25 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { DarkModeContext } from '../../context/DarkModeConhtext';
+import { useContryInfo } from './CountryContext';
 import Layout from '../../common/Layout/Layout';
 import './CountryDetails.scss';
 
 const CountryDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [country, setCountry] = useState({});
-
-  useEffect(() => {
-    const getCountryDetails = async () => {
-      const result = await axios(
-        `https://restcountries.com/v3.1/name/${location.pathname}`
-      );
-      const countryData = await result.data[0];
-      setCountry(countryData);
-    };
-
-    getCountryDetails();
-  }, [location.pathname]);
+  const [isDarkMode] = useContext(DarkModeContext);
+  const [country] = useContryInfo(location.pathname);
 
   return (
     <Layout>
       <main className="country-details">
-        <div className="country-details__arrow" onClick={() => navigate('/')}>
+        <div
+          style={{ background: isDarkMode ? '#2B3844' : '#fff' }}
+          className="country-details__arrow"
+          onClick={() => navigate('/')}
+        >
           <BsArrowLeft /> Back
         </div>
         <section className="country-details__data">
@@ -96,7 +89,11 @@ const CountryDetails = () => {
               </div>
               <div>
                 {country?.borders?.map((border, id) => (
-                  <span key={id} className="country-details__border">
+                  <span
+                    style={{ background: isDarkMode ? '#2B3844' : '#fff' }}
+                    key={id}
+                    className="country-details__border"
+                  >
                     {border}
                   </span>
                 ))}

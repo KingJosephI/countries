@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Layout from '../../common/Layout/Layout';
+import { useEffect, useState } from 'react';
 import { SearchBar, SelectContinent, CountriesList } from './components';
 import './CountriesPage.scss';
 
@@ -15,25 +15,29 @@ const Countries = () => {
       const result = await axios('https://restcountries.com/v3.1/all');
       const allCountriesData = await result.data;
 
-      const filteredCountries = await allCountriesData.filter((data) =>
-        data.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      if (searchTerm) {
+        const filteredCountries = await allCountriesData.filter((data) =>
+          data.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
-      searchTerm
-        ? setCountries(filteredCountries)
-        : setCountries(allCountriesData);
+        setCountries(filteredCountries);
+        return;
+      }
 
-      const countriesByRegion = await allCountriesData.filter((data) =>
-        data.region.toLowerCase().includes(region.toLowerCase())
-      );
+      if (region) {
+        const countriesByRegion = await allCountriesData.filter((data) =>
+          data.region.toLowerCase().includes(region.toLowerCase())
+        );
 
-      region ? setCountries(countriesByRegion) : setCountries(allCountriesData);
-
+        setCountries(countriesByRegion);
+        return;
+      }
+      setCountries(allCountriesData);
       setIsloading(false);
     };
 
     getCountries();
-  }, [searchTerm, region]);
+  }, [region, searchTerm]);
 
   return (
     <Layout>
@@ -49,7 +53,7 @@ const Countries = () => {
           />
         </section>
 
-        {isLoading ? (
+        {/* {isLoading ? (
           <div
             style={{
               display: 'flex',
@@ -59,9 +63,9 @@ const Countries = () => {
           >
             Loading...
           </div>
-        ) : (
-          <CountriesList countries={countries} />
-        )}
+        ) : ( */}
+        <CountriesList countries={countries} isLoading={isLoading} />
+        {/* )} */}
       </main>
     </Layout>
   );

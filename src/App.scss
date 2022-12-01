@@ -1,0 +1,13 @@
+@use './styles/functions' as *;
+
+.container {
+  background-color: #f2f2f2;
+  color: #111517;
+  min-height: 100vh;
+}
+
+.container-dark {
+  background-color: #202c36;
+  color: #fff;
+  min-height: 100vh;
+}
