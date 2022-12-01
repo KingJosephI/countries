@@ -1,13 +1,13 @@
 @use '../../../styles/functions' as *;
 
-.header {
+@mixin headerStyle($bgc: #fff) {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: rem(16);
   min-height: rem(80);
   box-shadow: rgba(149, 157, 165, 0.1) rem(0) rem(8) rem(24);
-  background-color: #fff;
+  background-color: $bgc;
 
   &__title {
     font-size: rem(14);
@@ -27,6 +27,28 @@
       cursor: pointer;
     }
   }
+
+  @media screen and (min-width: rem(700)) {
+    padding-inline: rem(81);
+
+    &__title {
+      font-size: rem(24);
+    }
+
+    &__dark-mode {
+      font-size: rem(16);
+    }
+  }
+}
+
+.header {
+  @include headerStyle();
+}
+
+.header-dark {
+  @include headerStyle($bgc: #2b3844);
+  box-shadow: #2b3844 rem(0) rem(0) rem(8);
+  color: #fff;
 }
 
 @media screen and (min-width: rem(700)) {

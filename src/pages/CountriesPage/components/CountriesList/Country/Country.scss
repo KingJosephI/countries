@@ -1,7 +1,7 @@
 @use '../../../../../styles/functions' as *;
 
-.country {
-  background-color: #fff;
+@mixin countryStyles($bgc: #fff) {
+  background-color: $bgc;
   border-radius: rem(5);
   overflow: hidden;
   transition: 0.2s;
@@ -32,14 +32,11 @@
   &__content {
     padding: rem(46) rem(24);
   }
-}
 
-@media screen and (min-width: rem(700)) {
-  .country {
+  @media screen and (min-width: rem(700)) {
     width: 100%;
     &__illustration {
       height: rem(180);
-      // background-color: green;
 
       img {
         width: 100%;
@@ -47,4 +44,12 @@
       }
     }
   }
+}
+.country {
+  @include countryStyles();
+}
+
+.country-dark {
+  @include countryStyles($bgc: #2b3844);
+  color: #fff;
 }

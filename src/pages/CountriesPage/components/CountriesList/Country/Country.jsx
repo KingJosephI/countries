@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { DarkModeContext } from '../../../../../context/DarkModeConhtext';
 import './Country.scss';
 
 const Country = ({ country = {} }) => {
   const { name, population, region, capital, flags } = country;
   const navigate = useNavigate();
+  const [isDarkMode] = useContext(DarkModeContext);
 
   return (
     <div
-      className="country"
+      className={isDarkMode ? 'country-dark' : 'country'}
       onClick={() =>
         navigate(`/${name.common.toLowerCase()}`, { state: name.common })
       }

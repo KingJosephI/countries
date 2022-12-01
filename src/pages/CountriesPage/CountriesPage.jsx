@@ -33,7 +33,7 @@ const Countries = () => {
     };
 
     getCountries();
-  }, [searchTerm, region]);
+  }, [region, searchTerm]);
 
   return (
     <Layout>
