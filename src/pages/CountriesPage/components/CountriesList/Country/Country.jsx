@@ -24,15 +24,20 @@ const Country = ({ country = {} }) => {
 
       <div className="country__content">
         <h2 className="country__name">{name.common}</h2>
-        <div className="country__info-type">
-          <span>Population</span>: {population?.toLocaleString('en-US')}
-        </div>
-        <div className="country__info-type">
-          <span>Region</span>: {region}
-        </div>
-        <div className="country__info-type">
-          <span>Capital</span>: {capital}
-        </div>
+        <ul className="country__info-type">
+          <li>
+            <span>Population: </span>
+            {population?.toLocaleString('en-US')}
+          </li>
+          <li>
+            <span>Region: </span>
+            {region}
+          </li>
+          <li>
+            <span>Capital: </span>
+            {capital}
+          </li>
+        </ul>
       </div>
     </article>
   );
