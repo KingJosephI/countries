@@ -17,7 +17,7 @@ const Country = ({ country = {} }) => {
       }
     >
       <div className="country__illustration">
-        <img src={flags?.png} alt={`${name} flag`} />
+        <img src={flags?.png} alt={`${name.common} flag`} />
       </div>
       <div className="country__content">
         <h2 className="country__name">{name.common}</h2>
