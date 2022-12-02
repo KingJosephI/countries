@@ -23,9 +23,11 @@ const CountryDetails = () => {
           <BsArrowLeft /> Back
         </div>
         <section className="country-details__data">
-          <div className="country-details__flag">
-            <img src={country?.flags?.svg} alt="" />
-          </div>
+          <img
+            className="country-details__flag"
+            src={country?.flags?.svg}
+            alt=""
+          />
 
           <div className="country-details__content">
             <h1 className="country-details__name">{country?.name?.common}</h1>

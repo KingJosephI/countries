@@ -5,8 +5,8 @@ import { DarkModeContext } from '../../../../../context/DarkModeConhtext';
 import './Country.scss';
 
 const Country = ({ country = {} }) => {
-  const { name, population, region, capital, flags } = country;
   const navigate = useNavigate();
+  const { name, population, region, capital, flags } = country;
   const [isDarkMode] = useContext(DarkModeContext);
 
   return (
@@ -16,9 +16,12 @@ const Country = ({ country = {} }) => {
         navigate(`/${name.common.toLowerCase()}`, { state: name.common })
       }
     >
-      <div className="country__illustration">
-        <img src={flags?.png} alt={`${name.common} flag`} />
-      </div>
+      <img
+        className="country__flag"
+        src={flags?.png}
+        alt={`${name.common} flag`}
+      />
+
       <div className="country__content">
         <h2 className="country__name">{name.common}</h2>
         <div className="country__info-type">
