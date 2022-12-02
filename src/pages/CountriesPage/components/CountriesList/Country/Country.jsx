@@ -10,7 +10,7 @@ const Country = ({ country = {} }) => {
   const [isDarkMode] = useContext(DarkModeContext);
 
   return (
-    <div
+    <article
       className={isDarkMode ? 'country-dark' : 'country'}
       onClick={() =>
         navigate(`/${name.common.toLowerCase()}`, { state: name.common })
@@ -31,7 +31,7 @@ const Country = ({ country = {} }) => {
           <span>Capital</span>: {capital}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
