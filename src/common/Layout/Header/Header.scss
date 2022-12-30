@@ -53,9 +53,8 @@
 .header-dark {
   @include headerStyle($bgc: #2b3844);
   box-shadow: #2b3844 rem(0) rem(0) rem(8);
-  color: #fff; 
-
-  a {
+  color: #fff;
+    a {
     color: #fff;
   }
 }

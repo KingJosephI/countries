@@ -4,40 +4,53 @@ import { useEffect, useState } from 'react';
 import { SearchBar, SelectContinent, CountriesList } from './components';
 import './CountriesPage.scss';
 
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+    return () => clearTimeout(timeoutId);
+  }, [value, delay]);
+
+  return debouncedValue;
+};
+
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsloading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [region, setRegion] = useState('');
 
+  const debouncedValue = useDebounce(searchTerm, 300);
+  const getCountries = async () => {
+    const result = await axios('https://restcountries.com/v3.1/all');
+    const allCountriesData = await result.data;
+
+    if (searchTerm) {
+      const filteredCountries = await allCountriesData.filter((data) =>
+        data.name.common.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      setCountries(filteredCountries);
+      return;
+    }
+
+    if (region) {
+      const countriesByRegion = await allCountriesData.filter((data) =>
+        data.region.toLowerCase().includes(region.toLowerCase())
+      );
+
+      setCountries(countriesByRegion);
+      return;
+    }
+    setCountries(allCountriesData);
+    setIsloading(false);
+  };
   useEffect(() => {
-    const getCountries = async () => {
-      const result = await axios('https://restcountries.com/v3.1/all');
-      const allCountriesData = await result.data;
-
-      if (searchTerm) {
-        const filteredCountries = await allCountriesData.filter((data) =>
-          data.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-
-        setCountries(filteredCountries);
-        return;
-      }
-
-      if (region) {
-        const countriesByRegion = await allCountriesData.filter((data) =>
-          data.region.toLowerCase().includes(region.toLowerCase())
-        );
-
-        setCountries(countriesByRegion);
-        return;
-      }
-      setCountries(allCountriesData);
-      setIsloading(false);
-    };
-
     getCountries();
-  }, [region, searchTerm]);
+  }, [debouncedValue]);
 
   return (
     <Layout>
