@@ -13,6 +13,11 @@
     font-size: rem(14);
     line-height: rem(20);
     font-weight: 800;
+
+    a {
+      text-decoration: none;
+      color: #111517;
+    }
   }
 
   &__dark-mode {
@@ -48,7 +53,11 @@
 .header-dark {
   @include headerStyle($bgc: #2b3844);
   box-shadow: #2b3844 rem(0) rem(0) rem(8);
-  color: #fff;
+  color: #fff; 
+
+  a {
+    color: #fff;
+  }
 }
 
 @media screen and (min-width: rem(700)) {

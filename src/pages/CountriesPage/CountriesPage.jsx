@@ -52,20 +52,7 @@ const Countries = () => {
             onChange={(e) => setRegion(e.target.value)}
           />
         </section>
-
-        {/* {isLoading ? (
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            Loading...
-          </div>
-        ) : ( */}
         <CountriesList countries={countries} isLoading={isLoading} />
-        {/* )} */}
       </main>
     </Layout>
   );
